@@ -1,0 +1,298 @@
+/*
+Theme Name: 4Rodas Gaove
+Description: A basic responsive wordpress theme.
+Author: Gabriela Ogasawara
+Author URI: http://www.gabrielaogasawara.com.br
+Version: 1.0
+Tags: responsive,bootstrap
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+*/
+
+<style>
+@import url('https://fonts.googleapis.com/css?family=Anton|Fjalla+One');
+html,body{height: 100%}
+ul{padding:0;}
+
+/*HEADER*/
+nav{
+    background: #8de4a0;
+    min-height:70px;
+    border-bottom:0.2em solid rgba(214, 26, 170, 0.42);
+  }
+  .nav-menu{
+    position:relative;
+}
+
+.company,.main-menu{
+    position:absolute;
+  }
+  .company, .main-menu ul li a{
+    height: 50px;
+    line-height: 50px;
+  }
+  .company{
+    font-weight: 700;
+    color:#8455d8;
+    font-size:2em;
+    font-family: 'Fjalla One', sans-serif;
+    padding-top: 10px;
+    max-width: 200px;
+    overflow:hidden;
+    text-transform: uppercase;
+  }
+  .company a{
+    text-decoration: none;
+    color:#8455d8;
+}
+
+.main-menu{
+    text-align: center;
+    right:0;
+    vertical-align: middle;
+    margin-right: 2em;
+  }
+  .main-menu ul li{ 
+    display:block;
+    float:left;
+    margin-left:0.5em;
+  }
+  .main-menu ul li a{
+    min-width:150px;
+    text-decoration: none;
+    display:block;
+    padding:0 20px;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: #fff;
+    background: #8455d8;
+    border-bottom: 1px solid white;
+  }
+  .main-menu ul li a:hover{
+    background: #6b41b7;
+  }
+  .main-menu .current-menu-item > a{
+    background-color: #6b41b7;
+}
+
+.drop::after{
+    font-family: FontAwesome;
+    content: "\f0d7";
+    padding:0.5em;
+}
+
+.sub-menu{
+    position:absolute;
+    display:none;
+    z-index:1;
+  }
+  .main-menu ul li:hover .sub-menu{
+    display:block;
+  }
+
+  .sub-menu .menu-item {
+    margin-left:0;
+    width:200px;
+}
+
+.show{
+  display:block;
+}
+
+.hide{
+  display:none;
+}
+
+/*MAIN*/
+.btn-default, .btn-default:hover {
+    color: #333;
+    border:0.2em solid #8de4a0;
+    background-color: rgba(255,255,255,0.5);
+}
+.wrap{
+  min-height: 950px;
+}
+
+/*FRONT-PAGE*/
+.jumbotron{
+  background-image: url(http://lorempixel.com/output/cats-q-c-1920-480-5.jpg);
+  background-repeat:no-repeat;
+  -webkit-background-size:cover;
+  -moz-background-size:cover;
+  -o-background-size:cover;
+  background-size:cover;
+  background-position:center;
+  height:450px;
+  text-align: center;
+  color:#fff;
+}
+.widget-front{
+  padding:4em 0;
+}
+.box-info{
+    min-height: 320px;
+    padding:1.5em;
+    border:0.2em solid #d7cce8;
+    border-radius:10px;
+    margin:0.3em;
+  }
+  .box-info>h3{
+    color:#d61aaa;
+}
+
+/*SIDEBAR*/
+.sidebar{
+    margin:2em 0;
+  }
+  .sidebar li{
+    display:block;
+  }
+  .sidebar li a{
+    text-decoration: none;
+    color:#d61aaa;
+}
+
+.widget{
+  padding:1.3em;
+}
+
+/*404*/
+.error-404 {
+    background-color: #dcdcdc;
+    border-radius: 10px;
+    min-height:500px;
+    margin: 3em;
+  }
+  .error-404 .info{
+    padding:5em;
+  }
+
+  .error-404 img{
+    margin:0 auto;
+  }
+
+  .error-404 h1{
+    color:#d61aaa;
+}
+
+/*HOME/BLOG - SINGLE-PAGE*/
+.post{
+    margin:1.5em 0;
+    padding:2em;
+    background-color: #dcdcdc;
+    border-radius: 10px;
+  }
+  .post a, .title, .comment-body a, .comment-respond a,.box-info a{
+    text-decoration: none;
+    color:#d61aaa;
+}
+
+.comment-body{
+  padding:1em;
+  margin-bottom:1em;
+  }
+  .children{
+    padding-left:2em;
+  }
+  .comment-form-comment textarea{
+    display:block;
+}
+
+/*FOOTER*/
+.footer {
+    background-color:#404040;
+    padding: 1em;
+    text-align: center;
+    color: #FFFFFD;
+}
+
+@media(max-width:768px){
+/* HEADER */
+  .admin-bar .responsive-menu{
+    padding-top: 50px !important;
+  }
+  .company {
+      display: inline-block;
+      margin-left: 1em;
+      font-size:1.5em;
+  }
+  .main-menu{
+    position:relative;
+    margin-top:10px;
+    margin-right:0;
+  }
+  .main-menu ul li{
+    display:block;
+    margin-left:0;
+    float:none;
+    width:100%;
+    margin-bottom:0.5em;
+  }
+  .responsive-menu{
+    background: #8de4a0;
+    position: 1em;
+    margin: 0;
+    height:100%;
+    width:90%;
+    max-width:320px;
+    position:fixed;
+    z-index:1;
+    top:0;
+    left:-90%;
+    transition: left 0.3s ease-out;
+    padding-top:10px;
+  }
+  .active .responsive-menu{
+    left:0;
+  }
+  .active:after{
+    content:"";
+    display:block;
+    position:fixed;
+    top: 0;
+    left:0;
+    bottom:0;
+    right:0;
+    background: rgba(0,0,0,0.6);
+  }
+  .open-menu, .close-menu{
+    height: 50px;
+    line-height: 50px;
+    font-size:1.5em;
+    padding: 0 0.8em;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    background:rgba(0,0,0,0.2);
+    color:#525151;
+    outline:none;
+    border: none;
+    margin-top: 10px;
+  }
+  .close-menu{
+    margin-left:15px;
+  }
+  .close-menu:after{
+    font-family: FontAwesome;
+    content: "\f00d";
+  }
+  .open-menu:before{
+    font-family: FontAwesome;
+    content: "\f0c9";
+  }
+  .sub-menu{
+    position:relative;
+  }
+  .sub-menu .menu-item {
+    margin-bottom:0;
+    width:100%;
+  }
+}
+
+@media not all and (max-width:768px){
+  .open-menu, 
+  .close-menu{
+    display:none;
+  }
+}
+</style>
